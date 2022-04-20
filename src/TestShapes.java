@@ -75,7 +75,10 @@ public class TestShapes{
             System.out.println("\n" + shape);
             System.out.println("Area of the " + shape.getClass().getSimpleName() + " is = " + shape.area());
             System.out.println("Perimeter of the " + shape.getClass().getSimpleName() + " is = " + shape.perimeter());
-            if (shape.area() > max) greatestArea = shape;
+            if (shape.area() > max){
+                max = shape.area();
+                greatestArea = shape;
+            }
         }
         System.out.println("\n" + greatestArea.getClass().getSimpleName() + " has the largest area as " + greatestArea.area());
         }
