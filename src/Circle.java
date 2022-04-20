@@ -20,11 +20,20 @@ public class Circle implements Shape{
     Instance variable must be encapsulated
     double radius
      */
-    public double radius;
+    private double radius;
 
-    public Circle(double radius) {
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
         this.radius = radius;
     }
+
+    public Circle(double radius){
+        setRadius(radius);
+    }
+
 /*
     Override area and perimeter methods here
     REMEMBER:

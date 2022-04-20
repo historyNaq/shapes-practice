@@ -13,10 +13,21 @@ public class Square implements Shape{
     Instance variable must be encapsulated
     double side
      */
-    double side;
-    public Square(double side) {
-        this.side = side;
+    private double side;
+
+
+    public double getSide(double side) {
+        return this.side;
     }
+
+    public void setSide(double side) {
+        this.side =side;
+    }
+
+    public Square(double side){
+        setSide(side);
+    }
+
     /*
     Override area and perimeter methods here
     REMEMBER:

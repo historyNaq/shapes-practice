@@ -66,7 +66,7 @@ public class TestShapes{
         shapes.add(square);
 
         //This will be used to find the largest area
-        double max = Integer.MIN_VALUE;
+        double max = Double.MIN_VALUE;
         Shape greatestArea = null;
 
 
