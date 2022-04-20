@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -7,7 +9,7 @@ import java.util.ArrayList;
  * LASTLY, COMPLETE TestShapes class
  */
 
-public class TestShapes {
+public class TestShapes{
     public static void main(String[] args) {
 
         /*
@@ -41,6 +43,41 @@ public class TestShapes {
          Circle has the largest area as 50.24
          */
 
+        Scanner input = new Scanner(System.in);
+        //Take in user input for width, height, side length, and radius.
+        System.out.println("Please enter the width");
+        double width = input.nextDouble();
+        System.out.println("Please enter the height");
+        double height = input.nextDouble();
+        System.out.println("Please enter the side length");
+        double side = input.nextDouble();
+        System.out.println("Please enter the radius");
+        double radius = input.nextDouble();
 
+        //instantiate your Objects
+        Circle circle = new Circle(radius);
+        Rectangle rectangle = new Rectangle(width, height);
+        Square square = new Square(side);
+
+        //Add your shapes to an ArrayList for easier access
+        List <Shape> shapes = new ArrayList<>();
+        shapes.add(circle);
+        shapes.add(rectangle);
+        shapes.add(square);
+
+        //This will be used to find the largest area
+        double max = Integer.MIN_VALUE;
+        Shape greatestArea = null;
+
+
+        //Shape output
+        for (Shape shape : shapes) {
+            System.out.println("\n" + shape);
+            System.out.println("Area of the " + shape.getClass().getSimpleName() + " is = " + shape.area());
+            System.out.println("Perimeter of the " + shape.getClass().getSimpleName() + " is = " + shape.perimeter());
+            if (shape.area() > max) greatestArea = shape;
+        }
+        System.out.println("\n" + greatestArea.getClass().getSimpleName() + " has the largest area as " + greatestArea.area());
+        }
     }
-}
+
